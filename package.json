@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts"
+    "start": "node --env-file=.env --import=tsx --watch ./src/server.ts",
+    "file": "node --import=tsx --watch ./src/file.ts"
   },
   "author": "Luan",
   "license": "ISC",

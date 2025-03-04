@@ -6,7 +6,7 @@ import { interferir } from "../middlewares/interferir";
 
 const router = express.Router();
 
-router.use(interferir);
+//router.use(interferir);
 
 router.use("/produtos", produtosRouter);
 router.use("/voos", voosRouter);
@@ -17,6 +17,10 @@ router.get("/ping", (req, res) => {
 });
 
 router.get("/", (req, res) => {
+  console.log('PARAMS', req.params);
+  console.log('QUERY', req.query);
+  console.log('BODY', req.body);
+
   let name = "Luan";
   let age = 24;
 
