@@ -13,13 +13,13 @@ router.use("/voos", voosRouter);
 
 router.get("/ping", (req, res) => {
   console.log("EXECUTOU O PING!");
-  res.json({ pong: true });
+  res.status(200).json({ pong: true });
 });
 
 router.get("/", (req, res) => {
-  console.log('PARAMS', req.params);
-  console.log('QUERY', req.query);
-  console.log('BODY', req.body);
+  console.log("PARAMS", req.params);
+  console.log("QUERY", req.query);
+  console.log("BODY", req.body);
 
   let name = "Luan";
   let age = 24;
