@@ -3,6 +3,7 @@ import produtosRouter from "./produtos";
 import voosRouter from "./voos";
 import { error } from "console";
 import { interferir } from "../middlewares/interferir";
+import { localStrategyAuth } from "../libs/passport-local";
 
 const router = express.Router();
 
@@ -12,7 +13,6 @@ router.use("/produtos", produtosRouter);
 router.use("/voos", voosRouter);
 
 router.get("/ping", (req, res) => {
-  console.log("EXECUTOU O PING!");
   res.status(200).json({ pong: true });
 });
 
@@ -25,6 +25,13 @@ router.get("/", (req, res) => {
   let age = 24;
 
   res.json({ name, age });
+});
+
+router.post("/login", localStrategyAuth, async (req, res) => {
+  res.json({
+    user: req.user,
+    auth: req.authInfo,
+  });
 });
 
 export default router;

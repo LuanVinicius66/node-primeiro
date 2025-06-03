@@ -11,12 +11,15 @@
   "description": "",
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/passport-local": "^1.0.38",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "express": "^4.21.2",
-    "helmet": "^8.0.0"
+    "helmet": "^8.0.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }
