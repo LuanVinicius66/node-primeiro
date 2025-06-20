@@ -5,6 +5,7 @@ import { error } from "console";
 import { interferir } from "../middlewares/interferir";
 import { localStrategyAuth } from "../libs/passport-local";
 import { bearerStrategy, bearerStrategyAuth } from "../libs/passport-bearer";
+import { jwtStrategyAuth } from "../libs/passport-jwt";
 
 const router = express.Router();
 
@@ -37,6 +38,10 @@ router.post("/login", localStrategyAuth, async (req, res) => {
 
 router.get("/private", bearerStrategyAuth, (req, res) => {
   res.json({ msg: "Acessou" });
+});
+
+router.get("/privatejwt", jwtStrategyAuth, (req, res) => {
+  res.json({ msg: "Acessou JWT" });
 });
 
 export default router;

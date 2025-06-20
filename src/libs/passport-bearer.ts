@@ -22,7 +22,9 @@ export const bearerStrategyAuth: RequestHandler = (req, res, next) => {
         req.user = user;
         return next();
       }
-      return res.status(401).json({ error: "Acesso negado. Bearer incorreto" });
+      return res
+        .status(401)
+        .json({ error: "Acesso negado. Bearer incorreto!" });
     }
   );
   authRequest(req, res, next);
