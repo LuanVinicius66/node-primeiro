@@ -11,6 +11,7 @@
   "description": "",
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/passport-http-bearer": "^1.0.41",
     "@types/passport-local": "^1.0.38",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
@@ -20,6 +21,7 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "passport": "^0.7.0",
+    "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0"
   }
 }

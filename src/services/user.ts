@@ -17,3 +17,15 @@ export const findUserByEmailAndPassword = async (
 export const createUserToken = (user: User) => {
   return "1234";
 };
+
+export const findUserByToken = async (token: string) => {
+  if (token === "1234") {
+    const user: User = {
+      id: "2",
+      name: "Luan",
+    };
+    return user;
+  }
+
+  return null;
+};

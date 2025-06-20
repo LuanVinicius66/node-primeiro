@@ -5,6 +5,7 @@ import router from "./routes";
 import { errorHandler, notFoundRequest } from "./routes/errorhandler";
 import passport from "passport";
 import { localStrategy } from "./libs/passport-local";
+import { bearerStrategy } from "./libs/passport-bearer";
 
 const server = express();
 
@@ -14,6 +15,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, "../public")));
 
 passport.use(localStrategy);
+passport.use(bearerStrategy);
 server.use(passport.initialize());
 
 server.use("/", router);

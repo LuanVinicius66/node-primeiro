@@ -4,6 +4,7 @@ import voosRouter from "./voos";
 import { error } from "console";
 import { interferir } from "../middlewares/interferir";
 import { localStrategyAuth } from "../libs/passport-local";
+import { bearerStrategy, bearerStrategyAuth } from "../libs/passport-bearer";
 
 const router = express.Router();
 
@@ -32,6 +33,10 @@ router.post("/login", localStrategyAuth, async (req, res) => {
     user: req.user,
     auth: req.authInfo,
   });
+});
+
+router.get("/private", bearerStrategyAuth, (req, res) => {
+  res.json({ msg: "Acessou" });
 });
 
 export default router;
